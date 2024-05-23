@@ -1,0 +1,53 @@
+nohup: ignoring input
+ * Serving Flask app 'flaskServer'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.9:5000
+[33mPress CTRL+C to quit[0m
+167.179.109.23 - - [24/May/2024 01:48:05] "GET /get_images/22 HTTP/1.1" 200 -
+167.179.109.23 - - [24/May/2024 01:48:07] "GET /get_images/22 HTTP/1.1" 200 -
+167.179.109.23 - - [24/May/2024 01:48:09] "GET /get_images/23 HTTP/1.1" 200 -
+167.179.109.23 - - [24/May/2024 01:48:12] "OPTIONS /predict HTTP/1.1" 200 -
+[2024-05-24 01:48:13,556] ERROR in app: Exception on /predict [POST]
+Traceback (most recent call last):
+  File "/home/annaconda3/envs/detr/lib/python3.9/site-packages/flask/app.py", line 2529, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/annaconda3/envs/detr/lib/python3.9/site-packages/flask/app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/annaconda3/envs/detr/lib/python3.9/site-packages/flask_cors/extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/annaconda3/envs/detr/lib/python3.9/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/annaconda3/envs/detr/lib/python3.9/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/detr/bysj_backend_deployment/flaskServer.py", line 227, in predict
+    res = getMinioPrediction(images)
+  File "/home/detr/bysj_backend_deployment/flaskServer.py", line 216, in getMinioPrediction
+    fileBack =  get_prediction(response.content,name)
+  File "/home/detr/bysj_backend_deployment/flaskServer.py", line 178, in get_prediction
+    objectRes = client.put_object(resultBucketName,objectName,image_stream,length=image_stream.getbuffer().nbytes)
+  File "/home/annaconda3/envs/detr/lib/python3.9/site-packages/minio/api.py", line 1922, in put_object
+    raise exc
+  File "/home/annaconda3/envs/detr/lib/python3.9/site-packages/minio/api.py", line 1868, in put_object
+    return self._put_object(
+  File "/home/annaconda3/envs/detr/lib/python3.9/site-packages/minio/api.py", line 1707, in _put_object
+    response = self._execute(
+  File "/home/annaconda3/envs/detr/lib/python3.9/site-packages/minio/api.py", line 437, in _execute
+    region = self._get_region(bucket_name)
+  File "/home/annaconda3/envs/detr/lib/python3.9/site-packages/minio/api.py", line 494, in _get_region
+    response = self._url_open(
+  File "/home/annaconda3/envs/detr/lib/python3.9/site-packages/minio/api.py", line 423, in _url_open
+    raise response_error
+minio.error.S3Error: S3 operation failed; code: NoSuchBucket, message: The specified bucket does not exist, resource: /resultbucket, request_id: 17D22F5F1E081846, host_id: dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8, bucket_name: resultbucket
+167.179.109.23 - - [24/May/2024 01:48:13] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -
+167.179.109.23 - - [24/May/2024 01:50:20] "GET /get_images/0 HTTP/1.1" 200 -
+167.179.109.23 - - [24/May/2024 01:50:22] "GET /get_images/1 HTTP/1.1" 200 -
+167.179.109.23 - - [24/May/2024 01:50:24] "GET /get_images/2 HTTP/1.1" 200 -
+167.179.109.23 - - [24/May/2024 01:50:25] "GET /get_images/3 HTTP/1.1" 200 -
+167.179.109.23 - - [24/May/2024 01:50:30] "OPTIONS /predict HTTP/1.1" 200 -
+167.179.109.23 - - [24/May/2024 01:50:31] "POST /predict HTTP/1.1" 200 -
+167.179.109.23 - - [24/May/2024 01:50:35] "GET /get_images/3 HTTP/1.1" 200 -
+167.179.109.23 - - [24/May/2024 01:50:40] "OPTIONS /predict HTTP/1.1" 200 -
+167.179.109.23 - - [24/May/2024 01:50:43] "POST /predict HTTP/1.1" 200 -

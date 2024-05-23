@@ -1,0 +1,83 @@
+{
+  "images": [
+    {
+      "id": 20180000001,
+      "file_name": "pedestrians-warning-sign-against-blue-sky.jpg",
+      "width": 4160,
+      "height": 5493
+    },
+    {
+      "id": 20180000002,
+      "file_name": "vecteezy_no-entry-traffic-sign-against-clear-blue-sky_4749353.jpg",
+      "width": 3072,
+      "height": 2048
+    }
+  ],
+  "type": "instances",
+  "annotations": [
+    {
+      "segmentation": [
+        [
+          959,
+          723,
+          959,
+          3593,
+          3841,
+          3593,
+          3841,
+          723
+        ]
+      ],
+      "area": 8271340,
+      "iscrowd": 0,
+      "ignore": 0,
+      "image_id": 20180000001,
+      "bbox": [
+        959,
+        723,
+        2882,
+        2870
+      ],
+      "category_id": 0,
+      "id": 1
+    },
+    {
+      "segmentation": [
+        [
+          1452,
+          176,
+          1452,
+          1369,
+          2523,
+          1369,
+          2523,
+          176
+        ]
+      ],
+      "area": 1277703,
+      "iscrowd": 0,
+      "ignore": 0,
+      "image_id": 20180000002,
+      "bbox": [
+        1452,
+        176,
+        1071,
+        1193
+      ],
+      "category_id": 1,
+      "id": 2
+    }
+  ],
+  "categories": [
+    {
+      "supercategory": "none",
+      "id": 0,
+      "name": "ped_crossing"
+    },
+    {
+      "supercategory": "none",
+      "id": 1,
+      "name": "do_not_enter"
+    }
+  ]
+}
