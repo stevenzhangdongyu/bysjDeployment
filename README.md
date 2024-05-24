@@ -2,6 +2,8 @@
 
 😋😋😋hi~朋友们好，我是一名重庆大学20级计算机科学与技术的普通学生，平时作业全部水过去，临近毕业，突然感觉还是不能太水，于是为了能够顺利毕业，熬夜coding做了一个呃......勉强还能用的系统，这里主要介绍部署流程，希望对还没有掌握网站部署方法的小伙伴有那么一丢丢帮助，如果觉得有，那么请给个免费的star！
 
+![image-20240524224449417](./typora_images/image-20240524224449417.png)
+
 ***
 
 ## 部署流程
@@ -162,7 +164,7 @@ cd  bysj_backend_deployment
 bash ./install.sh
 ```
 
-安装完毕后，我们要先准备一下minio的东西，在游览器上输入该服务器的ip加上冒号加上9001进入minio的游览器客户端，首先创建两个bucket。命名为imagebucket和resultbucket，然后进入到obejctBrowser，选择imagebucket，create a new path，输入test2017,然后把我们的图片库的图片传上去，如下
+安装完毕后，我们要先准备一下minio的东西，在游览器上输入该服务器的ip加上冒号加上9001进入minio的游览器客户端，首先创建两个bucket。命名为imagebucket和resultbucket，然后进入到obejctBrowser，选择imagebucket，create a new path，输入test2017,然后把我们的[图片库](https://pan.baidu.com/s/1R5Yb9uTmqKGSe7O82lP0Ww?pwd=1234 )的图片传上去，如下
 
 ![image-20240523205434313](./typora_images/image-20240523205434313.png)
 
@@ -290,7 +292,7 @@ sudo apt-get install -y nodejs
 执行依赖安装命令，这个命令会读取vue工程下的package.json文件，安装所有需要的库，并且会在当前文件夹下创建一个新的文件夹，用来放刚才下好的库
 
 ```bash
-npm install--legacy-peer-deps
+npm install --legacy-peer-deps
 ```
 
 接下来修改代码
